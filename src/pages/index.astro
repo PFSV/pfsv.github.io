@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import fs from 'fs';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const files = fs.readdirSync('./src/pages')
+  .filter(f => f.endsWith('.md'))
+  .sort()
+  .reverse();
 ---
 
 <Layout>
-	<Welcome />
+  <h1>Study Diary</h1>
+
+  <ul>
+    {files.map(f => (
+      <li>
+        <a href={`/${f.replace('.md','')}`}>
+          {f.replace('.md','')}
+        </a>
+      </li>
+    ))}
+  </ul>
 </Layout>
