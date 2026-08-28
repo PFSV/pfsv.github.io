@@ -117,7 +117,7 @@ export const projects: Project[] = [
       { label: 'PyPI', href: 'https://pypi.org/project/pycag/' },
     ],
     command:
-      'git clone https://github.com/PFSV/cag.git\ncd cag\npython3 scripts/01_build_corpus.py --output /tmp/pycag-corpus.txt',
+      'git clone https://github.com/PFSV/cag.git\ncd cag\npython3 -m unittest discover -s tests -v\npython3 scripts/01_build_corpus.py --output /tmp/pycag-corpus.txt',
     note:
       'The smoke path needs only the repository sample. Building a KV cache additionally requires a compatible model and suitable memory.',
     tags: ['CAG', 'LLM', 'Python', 'Hugging Face'],
