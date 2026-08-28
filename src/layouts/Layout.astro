@@ -1,0 +1,52 @@
+---
+import '../styles/global.css';
+import { nav, profile } from '../lib/site';
+
+const {
+  title = profile.name,
+  description = `${profile.name} — ${profile.role}. ${profile.statement}`,
+} = Astro.props;
+
+const pageTitle = title === profile.name ? title : `${title} · ${profile.name}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f5f3ee" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="me" href={profile.github} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <a class="identity" href="/">
+        <span class="monogram">PFSV</span>
+        <span>
+          <strong>{profile.name}</strong>
+          <small>{profile.role}</small>
+        </span>
+      </a>
+      <nav aria-label="Primary navigation">
+        {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+    </header>
+    <main id="main"><slot /></main>
+    <footer>
+      <span>© {new Date().getFullYear()} {profile.name}</span>
+      <span>Claims link to their evidence.</span>
+      <a href="https://github.com/PFSV/pfsv.github.io">Source</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { projects } from '../lib/site';
+---
+
+<Layout title="Work" description="Selected work by Hyeonseop Yoon, with contribution, evidence, runnable commands, and limitations.">
+  <header class="page-head">
+    <p class="eyebrow">Selected work</p>
+    <h1>Claims you can inspect.</h1>
+    <p>
+      Projects are ordered by relevance to grounded NLP work. “Runnable code” means a public,
+      lightweight smoke path is provided—not that private datasets or production systems are public.
+    </p>
+  </header>
+
+  <div class="grid">
+    {projects.map((project) => (
+      <article class="card" id={project.slug}>
+        <span class="badge">{project.evidence}</span>
+        <h2>{project.title}</h2>
+        <p>{project.summary}</p>
+        <div class="proof">
+          <p><strong>My contribution</strong><br />{project.contribution}</p>
+          <p><strong>Result</strong><br />{project.result}</p>
+          {project.command && (
+            <div>
+              <p><strong>Smoke command</strong></p>
+              <pre><code>{project.command}</code></pre>
+            </div>
+          )}
+          <p class="meta"><strong>Scope:</strong> {project.note}</p>
+        </div>
+        <div class="tags">
+          {project.tags.map((tag) => <span class="tag">{tag}</span>)}
+        </div>
+        <div class="links">
+          {project.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer">{link.label} ↗</a>)}
+        </div>
+      </article>
+    ))}
+  </div>
+</Layout>

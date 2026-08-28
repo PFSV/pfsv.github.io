@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { publications, profile } from '../lib/site';
+---
+
+<Layout title="Research" description="Research publications and research direction of Hyeonseop Yoon.">
+  <header class="page-head">
+    <p class="eyebrow">Research</p>
+    <h1>Meaning, representation, and grounded systems.</h1>
+    <p>
+      My earlier research compared human neural representations with NLP models in metaphor and
+      reasoning tasks. That background now informs practical questions about evidence, grounding,
+      and what a model output actually supports.
+    </p>
+  </header>
+
+  <section class="section" style="margin-top:0">
+    <h2>Publications</h2>
+    <ul class="timeline">
+      {publications.map((publication) => (
+        <li>
+          <time>{publication.year}</time>
+          <div>
+            <h2><a href={publication.href} target="_blank" rel="noreferrer">{publication.title}</a></h2>
+            <p>{publication.venue}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section notice">
+    I have research experience at Seoul National University and Korea University. These were
+    research roles, not degree programs. Authorship and method details are collected in the
+    <a href={profile.portfolio}>portfolio repository</a>.
+  </section>
+</Layout>

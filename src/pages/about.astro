@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { capabilities, profile } from '../lib/site';
+---
+
+<Layout title="About">
+  <header class="page-head">
+    <p class="eyebrow">About</p>
+    <h1>{profile.name} <span class="meta">({profile.hangul})</span></h1>
+    <p>{profile.statement}</p>
+  </header>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Through-line</h2>
+      <p>
+        I started in language and cognitive-neuroscience research, comparing how brains and NLP
+        models represent meaning. Today I build applied NLP systems around retrieval, grounding,
+        evaluation, model adaptation, and serving.
+      </p>
+      <p>
+        The connection is methodological: define what a result means, test the claim on an
+        appropriate split, expose limitations, and give the system an abstention path when evidence
+        is insufficient.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Capabilities</h2>
+      <div class="tags">
+        {capabilities.map((capability) => <span class="tag">{capability}</span>)}
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Links</h2>
+      <div class="links">
+        <a href={profile.github}>GitHub</a>
+        <a href={profile.portfolio}>Portfolio repository</a>
+        <a href={profile.huggingFace}>Hugging Face</a>
+        <a href={profile.orcid}>ORCID</a>
+        <a href={`mailto:${profile.email}`}>Email</a>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Public/private boundary</h2>
+      <p>
+        Public materials contain only shareable methods, code, models, and evaluation context.
+        Client identities, production repositories, raw logs, internal infrastructure, and private
+        study or diary content are excluded.
+      </p>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,59 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { profile, projects } from '../lib/site';
+
+const featured = projects.slice(0, 3);
+---
+
+<Layout>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">{profile.role} · {profile.location}</p>
+      <h1>Grounded language systems, backed by evidence.</h1>
+      <p class="lede">
+        I work across retrieval, evaluation, model adaptation, and serving. Earlier research on
+        how brains and language models represent meaning informs how I approach grounding,
+        faithful measurement, and abstention.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="/work/">See work and run it</a>
+        <a class="button" href={profile.github}>GitHub</a>
+        <a class="button" href={`mailto:${profile.email}`}>Email</a>
+      </div>
+    </div>
+    <ul class="fact-list">
+      <li><strong>Applied NLP</strong><br /><span class="meta">grounded QA · retrieval · embeddings</span></li>
+      <li><strong>Research to systems</strong><br /><span class="meta">evaluation · adaptation · serving</span></li>
+      <li><strong>Public evidence</strong><br /><span class="meta">code · models · papers · limitations</span></li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <header class="section-head">
+      <div>
+        <p class="eyebrow">Selected evidence</p>
+        <h2>Start here</h2>
+      </div>
+      <p>Each item states what is public, what can be run, and what remains private.</p>
+    </header>
+    <div class="grid">
+      {featured.map((project) => (
+        <article class="card">
+          <span class="badge">{project.evidence}</span>
+          <h3>{project.title}</h3>
+          <p>{project.summary}</p>
+          <p class="meta">{project.result}</p>
+          <div class="links">
+            <a href={`/work/#${project.slug}`}>Evidence →</a>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section notice">
+    <strong>Evidence policy.</strong> Client names, proprietary code, raw logs, and private data
+    are not portfolio material. A case study is labeled as a case study; runnable code is given a
+    concrete smoke command; model claims link to their model cards and evaluation scope.
+  </section>
+</Layout>
