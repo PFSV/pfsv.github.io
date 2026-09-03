@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { publications, profile } from '../lib/site';
+import { publications, profile, service } from '../lib/site';
 ---
 
 <Layout title="Research" description="Research publications and research direction of Hyeonseop Yoon.">
@@ -23,6 +23,21 @@ import { publications, profile } from '../lib/site';
           <div>
             <h2><a href={publication.href} target="_blank" rel="noreferrer">{publication.title}</a></h2>
             <p>{publication.venue}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2>Academic service</h2>
+    <ul class="timeline">
+      {service.map((item) => (
+        <li>
+          <time>{item.year}</time>
+          <div>
+            <h2>{item.role}</h2>
+            <p>{item.venue}</p>
           </div>
         </li>
       ))}

@@ -47,12 +47,16 @@ export const projects: Project[] = [
     evidence: 'Case study',
     links: [
       {
+        label: 'Paper (arXiv)',
+        href: 'https://arxiv.org/abs/2609.00844',
+      },
+      {
         label: 'Method and limitations',
         href: 'https://github.com/PFSV/portfolio/blob/main/projects/grounded-qa-contact-center.md',
       },
     ],
     note:
-      'Production code, raw evaluation data, and the working manuscript are private. This is not presented as an open-source reproduction.',
+      'Accepted to the GroundLM Workshop at EMNLP 2026. Production code and raw evaluation data remain private, so this is not presented as an open-source reproduction.',
     tags: ['grounding', 'retrieval', 'evaluation', 'abstention'],
   },
   {
@@ -126,6 +130,12 @@ export const projects: Project[] = [
 
 export const publications = [
   {
+    year: '2026',
+    title: 'Staged Linguistic Seeding: Grounded Query Expansion for Verified-Unit QA in AI Contact Centers',
+    venue: 'GroundLM Workshop at EMNLP 2026',
+    href: 'https://arxiv.org/abs/2609.00844',
+  },
+  {
     year: '2024',
     title: 'Metaphor in Mind and Machine',
     venue: 'OHBM 2024 / Aperture Neuro',
@@ -142,6 +152,19 @@ export const publications = [
     title: 'Korean Twitter Bot Detection based on Deep Learning',
     venue: 'Korea Software Congress / KIISE',
     href: 'https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11224455',
+  },
+] as const;
+
+export const service = [
+  {
+    year: '2026',
+    role: 'Reviewer',
+    venue: 'Grounding Language Models (GroundLM) Workshop at EMNLP 2026',
+  },
+  {
+    year: '2026',
+    role: 'Reviewer',
+    venue: 'Vision-Language Models for Real-World Deployment (VLM4RWD) Workshop at NeurIPS 2026',
   },
 ] as const;
 
