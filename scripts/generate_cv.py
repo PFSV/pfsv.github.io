@@ -134,6 +134,11 @@ def build():
         "evaluation, and on-premise serving. Earlier research connected NLP representations with human cognition "
         "and neural signals.", styles["entry"]))
 
+    section(story, "Education", styles)
+    dated_entry(story, "Mar 2019 — Aug 2024", "Hankuk University of Foreign Studies",
+                "B.A. in English Linguistics & Language Technology · Double major in AI Software Engineering", styles,
+                "GPA: 4.17/4.5 · Undergraduate thesis: Metaphor in Mind and Machine")
+
     section(story, "Professional Experience", styles)
     dated_entry(story, "Mar 2024 — Present", "MAUM.AI", "AI Research Engineer · AICC R&D", styles)
     bullet(story, "Lead research and engineering across retrieval, RAG, agent orchestration, model adaptation, evaluation, and serving for automotive, insurance, finance, and public-sector systems.", styles)

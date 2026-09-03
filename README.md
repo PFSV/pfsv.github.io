@@ -22,6 +22,7 @@ The public CV is generated from a small ReportLab source so its content remains 
 python3 scripts/generate_cv.py
 ```
 
-This writes `public/assets/cv/hyeonseop_yoon_cv.pdf`. The public version intentionally omits
-education history, phone number, street address, salary history, client identities, and other
-unnecessary personal data. Military status is included by the owner's request.
+This writes `public/assets/cv/hyeonseop_yoon_cv.pdf`. The public version includes only the owner's
+undergraduate education and intentionally omits graduate enrollment, phone number, street address,
+salary history, client identities, and other unnecessary personal data. Military status is included
+by the owner's request.
