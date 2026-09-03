@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { education, experience, honors, profile, projects, publications, service } from '../lib/site';
+import { experience, honors, profile, projects, publications, service } from '../lib/site';
 
 const featured = projects.slice(0, 3);
 ---
@@ -72,18 +72,6 @@ const featured = projects.slice(0, 3);
         <article class="resume-row">
           <time>{item.period}</time>
           <div><h3>{item.organization}</h3><p class="resume-role">{item.role}</p><p>{item.description}</p></div>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="section" id="education">
-    <header class="section-head"><div><p class="eyebrow">Training</p><h2>Education</h2></div></header>
-    <div class="resume-list">
-      {education.map((item) => (
-        <article class="resume-row">
-          <time>{item.period}</time>
-          <div><h3>{item.school}</h3><p>{item.degree}</p><p class="meta">{item.detail}</p></div>
         </article>
       ))}
     </div>

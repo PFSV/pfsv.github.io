@@ -194,21 +194,6 @@ export const experience = [
   },
 ] as const;
 
-export const education = [
-  {
-    period: 'Sep 2024 — Present',
-    school: 'Seoul National University',
-    degree: 'Integrated M.S./Ph.D. Program in Brain and Cognitive Sciences · Leave of absence',
-    detail: 'GPA 3.9 / 4.3',
-  },
-  {
-    period: 'Mar 2019 — Aug 2024',
-    school: 'Hankuk University of Foreign Studies',
-    degree: 'B.A. in English Linguistics & Language Technology · Double major in AI Software Engineering',
-    detail: 'GPA 4.17 / 4.5',
-  },
-] as const;
-
 export const honors = [
   {
     year: '2023',
@@ -227,12 +212,6 @@ export const honors = [
     title: 'Outstanding Research Award',
     issuer: 'Korea Software Congress, KIISE',
     detail: 'Korean Twitter Bot Detection based on Deep Learning',
-  },
-  {
-    year: '2019–2021',
-    title: 'Academic Excellence Scholarship',
-    issuer: 'Hankuk University of Foreign Studies',
-    detail: '',
   },
 ] as const;
 

@@ -134,14 +134,6 @@ def build():
         "evaluation, and on-premise serving. Earlier research connected NLP representations with human cognition "
         "and neural signals.", styles["entry"]))
 
-    section(story, "Education", styles)
-    dated_entry(story, "Sep 2024 — Present", "Seoul National University",
-                "Integrated M.S./Ph.D. Program in Brain and Cognitive Sciences · Leave of absence", styles,
-                "GPA: 3.9/4.3")
-    dated_entry(story, "Mar 2019 — Aug 2024", "Hankuk University of Foreign Studies",
-                "B.A. English Linguistics & Language Technology · Double major, AI Software Engineering", styles,
-                "GPA: 4.17/4.5 · Undergraduate thesis: Metaphor in Mind and Machine")
-
     section(story, "Professional Experience", styles)
     dated_entry(story, "Mar 2024 — Present", "MAUM.AI", "AI Research Engineer · AICC R&D", styles)
     bullet(story, "Lead research and engineering across retrieval, RAG, agent orchestration, model adaptation, evaluation, and serving for automotive, insurance, finance, and public-sector systems.", styles)
@@ -160,9 +152,9 @@ def build():
     section(story, "Selected Projects", styles)
     dated_entry(story, "2024 — 2026", "Production Grounded AI Systems",
                 "MAUM.AI · Automotive, insurance, rail, and public-sector deployments", styles)
-    bullet(story, "Genesis AICC: domain-specific FAQ retrieval, slot-filling agent, long-term session memory, model compression, and low-latency inference across multiple service locations.", styles)
-    bullet(story, "KORAIL: on-premise voice chatbot and offline regulation-search agents using synthetic corpus generation and grounded retrieval.", styles)
-    bullet(story, "Insurance AI: document-layout parsing, policy-code mapping agents, knowledge distillation, retrieval over internal regulations, and distributed model serving.", styles)
+    bullet(story, "K-company automotive AICC: domain-specific FAQ retrieval, slot-filling agent, long-term session memory, model compression, and low-latency inference across multiple service locations.", styles)
+    bullet(story, "K-company rail service: on-premise voice chatbot and offline regulation-search agents using synthetic corpus generation and grounded retrieval.", styles)
+    bullet(story, "K-company insurance systems: document-layout parsing, policy-code mapping agents, knowledge distillation, retrieval over internal regulations, and distributed model serving.", styles)
     dated_entry(story, "2026", "pycag", "Open-source Cache-Augmented Generation toolkit", styles,
                 "PyPI package and public source: github.com/PFSV/cag")
     dated_entry(story, "2025 — 2026", "Korean Retrieval Embeddings", "BGE-M3 and Qwen3-based public encoders", styles,
@@ -187,13 +179,12 @@ def build():
                 "Comparative Analysis of Brain and NLP Models for Reasoning Tasks")
     dated_entry(story, "2022", "Outstanding Research Award", "Korea Software Congress, KIISE", styles,
                 "Korean Twitter Bot Detection based on Deep Learning")
-    dated_entry(story, "2019 — 2021", "Academic Excellence Scholarship", "Hankuk University of Foreign Studies", styles)
-
     section(story, "Additional Experience & Skills", styles)
     story.append(p("<b>Open Source Contribution Academy Masters</b> (Aug–Dec 2022) — Developed and maintained VisualPython, a Python-based GUI framework for statistics, machine learning, and deep learning workflows.", styles["entry"]))
     story.append(p("<b>Data Youth Campus</b> (Jul–Sep 2022) — Completed an NLP and deep-learning convergence program; built a Korean spam-detection system.", styles["entry"]))
     story.append(p("<b>Technical:</b> Python, PyTorch, Hugging Face, vLLM, RAG, BM25/SPLADE/dense retrieval, LoRA/ORPO, Docker, PostgreSQL/pgvector, Ray, SLURM/H100, Core ML, SQL, NumPy, pandas, scikit-learn", styles["entry"]))
     story.append(p("<b>Language:</b> Korean (native), English (TEPS 394, Feb 2024; lived in the United Kingdom, 2011–2013)", styles["entry"]))
+    story.append(p("<b>Military status:</b> Not completed", styles["entry"]))
 
     doc.build(story)
     print(OUTPUT)
