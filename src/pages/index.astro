@@ -1,59 +1,106 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { profile, projects } from '../lib/site';
+import { education, experience, honors, profile, projects, publications, service } from '../lib/site';
 
 const featured = projects.slice(0, 3);
 ---
 
 <Layout>
-  <section class="hero">
-    <div>
-      <p class="eyebrow">{profile.role} · {profile.location}</p>
-      <h1>Grounded language systems, backed by evidence.</h1>
-      <p class="lede">
-        I work across retrieval, evaluation, model adaptation, and serving. Earlier research on
-        how brains and language models represent meaning informs how I approach grounding,
-        faithful measurement, and abstention.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="/work/">See work and run it</a>
-        <a class="button" href={profile.github}>GitHub</a>
-        <a class="button" href={`mailto:${profile.email}`}>Email</a>
-      </div>
+  <section class="academic-hero">
+    <p class="eyebrow">Applied NLP · Grounded AI · Seoul</p>
+    <h1>{profile.name}</h1>
+    <p class="hero-role">AI Research Engineer at MAUM.AI</p>
+    <p class="lede">
+      I build reliable language systems for real operating environments. My work spans grounded
+      retrieval, query expansion, agent systems, model adaptation, evaluation, and serving—guided
+      by an earlier research background in language, cognition, and neural representation.
+    </p>
+    <div class="actions">
+      <a class="button primary" href={profile.cv}>Full CV · PDF</a>
+      <a class="button" href={profile.github}>GitHub</a>
+      <a class="button" href={profile.huggingFace}>Hugging Face</a>
+      <a class="button" href={profile.orcid}>ORCID</a>
+      <a class="button" href={`mailto:${profile.email}`}>Email</a>
     </div>
-    <ul class="fact-list">
-      <li><strong>Applied NLP</strong><br /><span class="meta">grounded QA · retrieval · embeddings</span></li>
-      <li><strong>Research to systems</strong><br /><span class="meta">evaluation · adaptation · serving</span></li>
-      <li><strong>Public evidence</strong><br /><span class="meta">code · models · papers · limitations</span></li>
-    </ul>
   </section>
 
-  <section class="section">
+  <section class="section" id="publications">
     <header class="section-head">
       <div>
-        <p class="eyebrow">Selected evidence</p>
-        <h2>Start here</h2>
+        <p class="eyebrow">Research</p>
+        <h2>Publications</h2>
       </div>
-      <p>Each item states what is public, what can be run, and what remains private.</p>
+      <a class="quiet-link" href="/research/">Research details →</a>
     </header>
-    <div class="grid">
-      {featured.map((project) => (
-        <article class="card">
-          <span class="badge">{project.evidence}</span>
-          <h3>{project.title}</h3>
-          <p>{project.summary}</p>
-          <p class="meta">{project.result}</p>
-          <div class="links">
-            <a href={`/work/#${project.slug}`}>Evidence →</a>
+    <div class="publication-list">
+      {publications.map((publication, index) => (
+        <article class="publication">
+          <span class="pub-number">P{publications.length - index}</span>
+          <div>
+            <h3><a href={publication.href}>{publication.title}</a></h3>
+            {index === 0 && <p class="authors"><strong>Hyeonseop Yoon</strong>, Jeong-Eun Park</p>}
+            <p class="venue">{publication.venue}</p>
+            <div class="paper-links"><a href={publication.href}>Paper ↗</a></div>
           </div>
         </article>
       ))}
     </div>
   </section>
 
-  <section class="section notice">
-    <strong>Evidence policy.</strong> Client names, proprietary code, raw logs, and private data
-    are not portfolio material. A case study is labeled as a case study; runnable code is given a
-    concrete smoke command; model claims link to their model cards and evaluation scope.
+  <section class="section" id="work">
+    <header class="section-head">
+      <div><p class="eyebrow">Engineering</p><h2>Selected work</h2></div>
+      <a class="quiet-link" href="/work/">All work & evidence →</a>
+    </header>
+    <div class="grid">
+      {featured.map((project) => (
+        <article class="card project-card">
+          <span class="badge">{project.evidence}</span>
+          <h3>{project.title}</h3>
+          <p>{project.summary}</p>
+          <p class="meta">{project.result}</p>
+          <a class="quiet-link" href={`/work/#${project.slug}`}>Details →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <header class="section-head"><div><p class="eyebrow">Background</p><h2>Experience</h2></div></header>
+    <div class="resume-list">
+      {experience.map((item) => (
+        <article class="resume-row">
+          <time>{item.period}</time>
+          <div><h3>{item.organization}</h3><p class="resume-role">{item.role}</p><p>{item.description}</p></div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <header class="section-head"><div><p class="eyebrow">Training</p><h2>Education</h2></div></header>
+    <div class="resume-list">
+      {education.map((item) => (
+        <article class="resume-row">
+          <time>{item.period}</time>
+          <div><h3>{item.school}</h3><p>{item.degree}</p><p class="meta">{item.detail}</p></div>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section two-column-section">
+    <div>
+      <p class="eyebrow">Recognition</p><h2>Selected honors</h2>
+      <ul class="compact-list">
+        {honors.map((item) => <li><span>{item.year}</span><div><strong>{item.title}</strong><br /><small>{item.issuer}{item.detail && ` · ${item.detail}`}</small></div></li>)}
+      </ul>
+    </div>
+    <div>
+      <p class="eyebrow">Community</p><h2>Academic service</h2>
+      <ul class="compact-list">
+        {service.map((item) => <li><span>{item.year}</span><div><strong>{item.role}</strong><br /><small>{item.venue}</small></div></li>)}
+      </ul>
+    </div>
   </section>
 </Layout>

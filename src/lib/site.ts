@@ -8,15 +8,17 @@ export const profile = {
   portfolio: 'https://github.com/PFSV/portfolio',
   huggingFace: 'https://huggingface.co/hyunseop',
   orcid: 'https://orcid.org/0009-0000-0905-4337',
+  cv: '/assets/cv/hyeonseop_yoon_cv.pdf',
   statement:
-    'I build grounded, evidence-driven language systems and connect retrieval research with production constraints.',
+    'I build grounded, evidence-driven language systems that connect retrieval research with production constraints.',
 } as const;
 
 export const nav = [
   { label: 'Home', href: '/' },
+  { label: 'Publications', href: '/#publications' },
+  { label: 'Experience', href: '/#experience' },
   { label: 'Work', href: '/work/' },
-  { label: 'Research', href: '/research/' },
-  { label: 'About', href: '/about/' },
+  { label: 'CV', href: profile.cv },
 ] as const;
 
 export type EvidenceLevel = 'Runnable code' | 'Public model + evaluation' | 'Case study';
@@ -165,6 +167,72 @@ export const service = [
     year: '2026',
     role: 'Reviewer',
     venue: 'Vision-Language Models for Real-World Deployment (VLM4RWD) Workshop at NeurIPS 2026',
+  },
+] as const;
+
+export const experience = [
+  {
+    period: 'Mar 2024 — Present',
+    organization: 'MAUM.AI',
+    role: 'AI Research Engineer · AICC R&D',
+    description:
+      'Research and engineering for production language systems across automotive, insurance, finance, and public-sector domains: retrieval, agent systems, model adaptation, evaluation, and serving.',
+  },
+  {
+    period: 'Dec 2023 — Feb 2024',
+    organization: 'Seoul National University',
+    role: 'Researcher · Cognitive & Systems Neuroscience Laboratory',
+    description:
+      'Analyzed recurrent neural-network models of working memory, sensory encoding, and decision bias; reviewed training dynamics and visualized information flow between units.',
+  },
+  {
+    period: 'Aug 2022 — Sep 2023',
+    organization: 'Korea University',
+    role: 'Researcher · Brain Signal Processing Laboratory',
+    description:
+      'Compared human fMRI representations with language-model embeddings using representational similarity analysis across reasoning and conceptual-metaphor tasks.',
+  },
+] as const;
+
+export const education = [
+  {
+    period: 'Sep 2024 — Present',
+    school: 'Seoul National University',
+    degree: 'Integrated M.S./Ph.D. Program in Brain and Cognitive Sciences · Leave of absence',
+    detail: 'GPA 3.9 / 4.3',
+  },
+  {
+    period: 'Mar 2019 — Aug 2024',
+    school: 'Hankuk University of Foreign Studies',
+    degree: 'B.A. in English Linguistics & Language Technology · Double major in AI Software Engineering',
+    detail: 'GPA 4.17 / 4.5',
+  },
+] as const;
+
+export const honors = [
+  {
+    year: '2023',
+    title: 'Outstanding Poster Award',
+    issuer: 'Korean Society for Human Brain Mapping',
+    detail: 'Metaphor in Mind and Machine',
+  },
+  {
+    year: '2023',
+    title: 'Outstanding Poster Award',
+    issuer: 'Brain Engineering Society of Korea',
+    detail: 'Comparative Analysis of Brain and NLP Models for Reasoning Tasks',
+  },
+  {
+    year: '2022',
+    title: 'Outstanding Research Award',
+    issuer: 'Korea Software Congress, KIISE',
+    detail: 'Korean Twitter Bot Detection based on Deep Learning',
+  },
+  {
+    year: '2019–2021',
+    title: 'Academic Excellence Scholarship',
+    issuer: 'Hankuk University of Foreign Studies',
+    detail: '',
   },
 ] as const;
 
