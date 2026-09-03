@@ -7,21 +7,32 @@ const featured = projects.slice(0, 3);
 
 <Layout>
   <section class="academic-hero">
-    <p class="eyebrow">Applied NLP · Grounded AI · Seoul</p>
-    <h1>{profile.name}</h1>
-    <p class="hero-role">AI Research Engineer at MAUM.AI</p>
-    <p class="lede">
-      I build reliable language systems for real operating environments. My work spans grounded
-      retrieval, query expansion, agent systems, model adaptation, evaluation, and serving—guided
-      by an earlier research background in language, cognition, and neural representation.
-    </p>
-    <div class="actions">
-      <a class="button primary" href={profile.cv}>Full CV · PDF</a>
-      <a class="button" href={profile.github}>GitHub</a>
-      <a class="button" href={profile.huggingFace}>Hugging Face</a>
-      <a class="button" href={profile.orcid}>ORCID</a>
-      <a class="button" href={`mailto:${profile.email}`}>Email</a>
+    <div class="hero-copy">
+      <p class="eyebrow">Applied NLP · Grounded AI · Seoul</p>
+      <h1>{profile.name}</h1>
+      <p class="hero-role">AI Research Engineer at MAUM.AI</p>
+      <p class="lede">
+        I build reliable language systems for real operating environments. My work spans grounded
+        retrieval, query expansion, agent systems, model adaptation, evaluation, and serving—guided
+        by an earlier research background in language, cognition, and neural representation.
+      </p>
+      <div class="actions">
+        <a class="button primary" href={profile.cv}>Full CV · PDF</a>
+        <a class="button" href={profile.github}>GitHub</a>
+        <a class="button" href={profile.huggingFace}>Hugging Face</a>
+        <a class="button" href={profile.orcid}>ORCID</a>
+        <a class="button" href={`mailto:${profile.email}`}>Email</a>
+      </div>
     </div>
+    <aside class="hero-proof" aria-label="Portfolio at a glance">
+      <p class="proof-label">At a glance</p>
+      <dl>
+        <div><dt>4</dt><dd>publications</dd></div>
+        <div><dt>2</dt><dd>public models</dd></div>
+        <div><dt>3</dt><dd>research awards</dd></div>
+      </dl>
+      <p>Grounding, faithful evaluation, reproducibility—and an abstention path when evidence is insufficient.</p>
+    </aside>
   </section>
 
   <section class="section" id="publications">

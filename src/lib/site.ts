@@ -15,9 +15,9 @@ export const profile = {
 
 export const nav = [
   { label: 'Home', href: '/' },
-  { label: 'Publications', href: '/#publications' },
-  { label: 'Experience', href: '/#experience' },
+  { label: 'Research', href: '/research/' },
   { label: 'Work', href: '/work/' },
+  { label: 'About', href: '/about/' },
   { label: 'CV', href: profile.cv },
 ] as const;
 
